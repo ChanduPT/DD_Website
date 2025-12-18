@@ -23,11 +23,17 @@ const toggleMobileMenu = () => {
 };
 
 if (mobileMenuToggle && navMenu) {
-    mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+    mobileMenuToggle.addEventListener('click', (e) => {
+        e.stopPropagation(); // Prevent event from bubbling to document
+        toggleMobileMenu();
+    });
 
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
-        if (!e.target.closest('.header-bottom-row') && !e.target.closest('.nav-menu')) {
+        // Don't close if clicking the toggle button or inside the nav
+        if (!e.target.closest('.mobile-menu-toggle') && 
+            !e.target.closest('.header-bottom-row') && 
+            !e.target.closest('.nav-menu')) {
             navMenu.classList.remove('active');
             mobileMenuToggle.setAttribute('aria-expanded', 'false');
             const spans = mobileMenuToggle.querySelectorAll('span');
@@ -36,6 +42,48 @@ if (mobileMenuToggle && navMenu) {
                 span.style.opacity = '1';
             });
         }
+    });
+    
+    // Close mobile menu when clicking any nav link (except dropdowns)
+    navMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            // Check if window is in mobile view (viewport width <= 968px)
+            if (window.innerWidth <= 968) {
+                // Don't close if it's a dropdown parent that stays on same page
+                const isDropdownParent = link.parentElement.classList.contains('dropdown');
+                const href = link.getAttribute('href');
+                
+                // Close menu for actual navigation links (not just # anchors on dropdown parents)
+                if (!isDropdownParent || href.includes('.html')) {
+                    setTimeout(() => {
+                        navMenu.classList.remove('active');
+                        mobileMenuToggle.setAttribute('aria-expanded', 'false');
+                        const spans = mobileMenuToggle.querySelectorAll('span');
+                        spans.forEach(span => {
+                            span.style.transform = 'none';
+                            span.style.opacity = '1';
+                        });
+                    }, 200); // Small delay for better UX
+                }
+            }
+        });
+    });
+    
+    // Handle mobile dropdown toggles
+    document.querySelectorAll('.dropdown > a').forEach(dropdownLink => {
+        dropdownLink.addEventListener('click', (e) => {
+            // Only prevent default and toggle on mobile
+            if (window.innerWidth <= 968) {
+                const parentLi = dropdownLink.closest('.dropdown');
+                const dropdownMenu = parentLi.querySelector('.dropdown-menu');
+                
+                // If clicking the parent link in mobile, toggle dropdown
+                if (dropdownMenu) {
+                    e.preventDefault();
+                    parentLi.classList.toggle('dropdown-open');
+                }
+            }
+        });
     });
 }
 
