@@ -27,8 +27,9 @@ if (mobileMenuToggle && navMenu) {
 
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
-        if (!e.target.closest('.main-nav')) {
+        if (!e.target.closest('.header-bottom-row') && !e.target.closest('.nav-menu')) {
             navMenu.classList.remove('active');
+            mobileMenuToggle.setAttribute('aria-expanded', 'false');
             const spans = mobileMenuToggle.querySelectorAll('span');
             spans.forEach(span => {
                 span.style.transform = 'none';
