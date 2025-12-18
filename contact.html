@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#FF6200">
+    <title>Contact Us - Saibaba Group</title>
+    <meta name="description" content="Get in touch with Saibaba Group for inquiries, catering orders, and charitable contributions.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header class="header header-minimal" role="banner">
+        <div class="container">
+            <div class="header-wrapper">
+                <a href="index.html" class="logo">
+                    <img src="saibaba_group_logo.png" alt="Saibaba Group Logo">
+                </a>
+                
+                <nav class="header-nav">
+                    <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="dropdown">
+                            <a href="about.html">About Us</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="team.html">Our Team</a></li>
+                                <li><a href="about.html#difference">The Saibaba Difference</a></li>
+                                <li><a href="community.html#cares">Saibaba Cares</a></li>
+                                <li><a href="news.html">News</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="community.html">Giving</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="community.html">Community Involvement</a></li>
+                                <li><a href="contact.html#contribution">Request Charitable Contribution</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="locations.html">Locations</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" role="main">
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <div class="contact-grid">
+                    <div class="contact-form-container">
+                        <h3>Send Us a Message</h3>
+                        <form id="contactForm" class="contact-form" onsubmit="event.preventDefault(); showNotification('Thank you for your message! We will get back to you within 24 hours.', 'success'); this.reset();">
+                            <div class="form-group">
+                                <label for="name">Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Select a subject</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="catering">Catering Request</option>
+                                    <option value="donation">Charitable Contribution</option>
+                                    <option value="feedback">Feedback</option>
+                                    <option value="franchise">Franchise Inquiry</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                    <div class="contact-info-container">
+                        <h3>Get In Touch</h3>
+                        <div class="contact-info">
+                            <div class="contact-info-item">
+                                <h4>Corporate Office</h4>
+                                <p>123 Business Park Drive<br>
+                                Boston, MA 02101</p>
+                            </div>
+                            
+                            <div class="contact-info-item">
+                                <h4>General Inquiries</h4>
+                                <p>Email: <a href="mailto:info@saibabagroup.com">info@saibabagroup.com</a><br>
+                                Phone: <a href="tel:+16175551234">(617) 555-1234</a></p>
+                            </div>
+                            
+                            <div class="contact-info-item">
+                                <h4>Marketing & Donations</h4>
+                                <p>Email: <a href="mailto:marketing@saibabagroup.com">marketing@saibabagroup.com</a></p>
+                            </div>
+                            
+                            <div class="contact-info-item">
+                                <h4>Saibaba Cares</h4>
+                                <p>Email: <a href="mailto:cares@saibabagroup.com">cares@saibabagroup.com</a></p>
+                            </div>
+                            
+                            <div class="contact-info-item">
+                                <h4>Career Opportunities</h4>
+                                <p>Visit our <a href="careers.html">Careers Page</a> to explore opportunities</p>
+                            </div>
+                            
+                            <div class="contact-info-item">
+                                <h4>Business Hours</h4>
+                                <p>Monday - Friday: 9:00 AM - 6:00 PM<br>
+                                Saturday - Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Catering Section -->
+        <section id="catering" class="catering-section">
+            <div class="container">
+                <h2>Catering Services</h2>
+                <p class="section-subtitle">Let us make your next event special with our catering services</p>
+                <div class="catering-content">
+                    <p>From corporate meetings to special celebrations, Saibaba Group offers comprehensive catering services to meet your needs. We provide fresh coffee, a variety of breakfast and lunch items, and sweet treats to make your event memorable.</p>
+                    
+                    <div class="catering-features">
+                        <div class="catering-feature">
+                            <h3>☕ Coffee Service</h3>
+                            <p>Box O' Joe and freshly brewed coffee options</p>
+                        </div>
+                        <div class="catering-feature">
+                            <h3>🥐 Breakfast</h3>
+                            <p>Assorted donuts, muffins, bagels, and more</p>
+                        </div>
+                        <div class="catering-feature">
+                            <h3>🥪 Lunch</h3>
+                            <p>Sandwiches, wraps, and meal boxes</p>
+                        </div>
+                        <div class="catering-feature">
+                            <h3>🍰 Desserts</h3>
+                            <p>Munchkins, cookies, and specialty items</p>
+                        </div>
+                    </div>
+                    
+                    <p class="catering-cta">For catering orders, please contact your nearest location directly or call our corporate office at <a href="tel:+16175551234">(617) 555-1234</a>. We recommend placing orders at least 24 hours in advance.</p>
+                    
+                    <div class="text-center">
+                        <a href="locations.html" class="btn btn-primary">Find a Location</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contribution Request Section -->
+        <section id="contribution" class="contribution-section">
+            <div class="container">
+                <h2>Request Charitable Contribution</h2>
+                <p class="section-subtitle">We're committed to supporting our communities</p>
+                <div class="contribution-content">
+                    <p>Saibaba Group is dedicated to giving back to the communities we serve. We regularly support local schools, healthcare workers, community events, youth programs, and charitable organizations.</p>
+                    
+                    <h3>What We Support</h3>
+                    <ul class="contribution-list">
+                        <li>Educational institutions and school events</li>
+                        <li>Healthcare workers and medical facilities</li>
+                        <li>Youth sports teams and programs</li>
+                        <li>Community events and celebrations</li>
+                        <li>Food banks and hunger relief programs</li>
+                        <li>Emergency relief efforts</li>
+                    </ul>
+                    
+                    <h3>How to Request Support</h3>
+                    <p>To request a charitable contribution, please email us at <a href="mailto:cares@saibabagroup.com">cares@saibabagroup.com</a> with the following information:</p>
+                    <ul class="contribution-list">
+                        <li>Organization name and contact information</li>
+                        <li>Event or program details (date, location, purpose)</li>
+                        <li>How the contribution will be used</li>
+                        <li>Why this cause is important to your community</li>
+                        <li>Any supporting documentation (501(c)(3) status, etc.)</li>
+                    </ul>
+                    
+                    <p>Requests are reviewed on a case-by-case basis. We recommend submitting requests at least 4-6 weeks before your event. Due to high demand, we cannot fulfill all requests but appreciate the opportunity to learn about the important work happening in our communities.</p>
+                    
+                    <div class="text-center">
+                        <a href="mailto:cares@saibabagroup.com" class="btn btn-primary">Email Contribution Request</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer footer-minimal">
+        <div class="container">
+            <div class="footer-minimal-content">
+                <p>&copy; 2025 Saibaba Group, LLC. All rights reserved.</p>
+                <nav class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="locations.html">Locations</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

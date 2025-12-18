@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="theme-color" content="#FF6200">
+    <title>Careers - Saibaba Group</title>
+    <meta name="description" content="Join the Saibaba Group team and be part of something special.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header class="header header-minimal" role="banner">
+        <div class="container">
+            <div class="header-wrapper">
+                <a href="index.html" class="logo">
+                    <img src="saibaba_group_logo.png" alt="Saibaba Group Logo">
+                </a>
+                
+                <nav class="header-nav">
+                    <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul class="nav-menu">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="dropdown">
+                            <a href="about.html">About Us</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="about.html">About Us</a></li>
+                                <li><a href="team.html">Our Team</a></li>
+                                <li><a href="about.html#difference">The Saibaba Difference</a></li>
+                                <li><a href="community.html#cares">Saibaba Cares</a></li>
+                                <li><a href="news.html">News</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="community.html">Giving</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="community.html">Community Involvement</a></li>
+                                <li><a href="contact.html#contribution">Request Charitable Contribution</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="locations.html">Locations</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content" role="main">
+        <section id="careers" class="careers-cta">
+            <div class="container">
+                <h2>Interested In a Career with Saibaba Group?</h2>
+                <p>At Saibaba Group, LLC, we are always looking for smiling individuals who are excited about serving America's Favorite Coffee.</p>
+                <a href="#apply" class="btn btn-primary">Apply Now</a>
+            </div>
+        </section>
+
+        <section id="apply" class="contact">
+            <div class="container">
+                <h2>Join Our Team</h2>
+                <p class="section-subtitle">Submit your application below</p>
+                <div class="contact-form-wrapper">
+                    <h3>Career Application Form</h3>
+                    <form class="contact-form" id="careerForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required placeholder="John Doe">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required placeholder="john@example.com">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required placeholder="(555) 123-4567">
+                            </div>
+                            <div class="form-group">
+                                <label for="position">Position of Interest *</label>
+                                <select id="position" name="position" required>
+                                    <option value="">Select a position</option>
+                                    <option value="crew-member">Crew Member</option>
+                                    <option value="shift-leader">Shift Leader</option>
+                                    <option value="assistant-manager">Assistant Manager</option>
+                                    <option value="store-manager">Store Manager</option>
+                                    <option value="corporate">Corporate Position</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Preferred Location *</label>
+                            <select id="location" name="location" required>
+                                <option value="">Select a location</option>
+                                <option value="boston">Downtown Boston</option>
+                                <option value="cambridge">Cambridge Square</option>
+                                <option value="newton">Newton Center</option>
+                                <option value="brookline">Brookline Village</option>
+                                <option value="somerville">Somerville Square</option>
+                                <option value="quincy">Quincy Bay</option>
+                                <option value="any">Any Location</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="experience">Relevant Experience</label>
+                            <textarea id="experience" name="experience" rows="6" placeholder="Tell us about your previous work experience..."></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Why do you want to join Saibaba Group? *</label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Tell us what motivates you..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit Application</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer footer-minimal">
+        <div class="container">
+            <div class="footer-minimal-content">
+                <p>&copy; 2025 Saibaba Group, LLC. All rights reserved.</p>
+                <nav class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="locations.html">Locations</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const careerForm = document.getElementById('careerForm');
+        if (careerForm) {
+            careerForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const formData = new FormData(careerForm);
+                const data = {
+                    name: formData.get('name'),
+                    email: formData.get('email'),
+                    phone: formData.get('phone'),
+                    position: formData.get('position'),
+                    location: formData.get('location')
+                };
+                
+                showNotification(
+                    '✅ Application Submitted!',
+                    `Thank you, ${data.name}! Your application for ${data.position} has been received. Our HR team will contact you at ${data.email} soon.`,
+                    'success'
+                );
+                careerForm.reset();
+            });
+        }
+    </script>
+</body>
+</html>
